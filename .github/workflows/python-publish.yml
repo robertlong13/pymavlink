@@ -61,6 +61,10 @@ jobs:
     env:
       PYTHON_VERSION: ${{ matrix.python_version }}
     steps:
+      # Fail for python 3.9 on purpose as a test, but pass on a retry
+    - name: Fail for Python 3.9
+      if: matrix.python_version == '3.9' && github.run_attempt == 1
+      run: exit 1
     - uses: actions/checkout@v2
     - name: Install mavlink definitions
       shell: bash
