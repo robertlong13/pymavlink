@@ -90,8 +90,6 @@ jobs:
         PYMAVLINK_FAST_INDEX: "1"
         CIBW_BUILD: ${{ matrix.cibw_build }}
         CIBW_ARCHS: ${{ matrix.cibw_archs }}
-        CIBW_BEFORE_BUILD: > # Install the latest lxml that has a wheel available
-            pip install --only-binary=:all: lxml
     - name: Upload wheels
       uses: actions/upload-artifact@v4
       with:
