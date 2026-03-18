@@ -32,7 +32,7 @@ jobs:
           ref = os.environ.get("GITHUB_REF", "")
           event = os.environ.get("GITHUB_EVENT_NAME", "")
 
-          if ref in ("refs/heads/main", "refs/heads/master") or event in ("release", "workflow_dispatch"):
+          if True:
               machines = [
                   ("linux", "ubuntu-latest", "auto64 auto32"),
                   ("linux-arm", "ubuntu-24.04-arm", "auto"),
